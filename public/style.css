@@ -437,3 +437,20 @@ form > button {
   }
 }
 
+.header-container {
+  border: 2px solid #fff;
+  padding: 10px;
+  width: 100%;
+  height: 10%;
+}
+
+.logo-image {
+  width: 50%;
+  float: left;
+}
+
+.nav-bar {
+  float: right;
+  width: 50%;
+  justify-content: center;
+}

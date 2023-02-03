@@ -82,30 +82,55 @@
   #login-form-submit {
     width: 100%;
     padding: 7px;
+    margin: 2%;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
+    border-spacing: 15px;
     color: white;
     font-weight: bold;
     background-color: #3a3a3a;
     cursor: pointer;
     outline: none;
   }
+
+  #signup-form-click {
+    width: 100%;
+    padding: 7px;
+    margin: 2%;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .button-container {
+  border: 3x solid #fff;
+  padding: 20px;
+  width: 100%;
+  height: 20%;
+  }
+
 </style>
 
 <body>
   <main id="main-holder">
     <h1 id="login-header">Fitness Tracker</h1>
-    <img src="intro.jpg" width="300" height="200">
-    
+    <img src="./images/logos/fit-forecast-logo.png" width="300" height="200">
+    <div class="header-container">
+      <form id="login-form">
+        <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+        <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+        <input type="submit" value="Login" id="login-form-submit">
+        <input type="button" value="Signup" id="signup-form-click">
+      </form>
+    </div>
+
     <div id="login-error-msg-holder">
       <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
     </div>
-    
-    <form id="login-form">
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-      <input type="submit" value="Login" id="login-form-submit">
-    </form>
   
   </main>
 </body>
@@ -123,11 +148,21 @@ loginButton.addEventListener("click", (e) => {
     if (username === "user" && password === "pass") {
         // alert("You have successfully logged in.");
         location.reload();
-        window.location.href = "./public/index.html";
+        window.location.href = "./public/main.html";
     } else {
         loginErrorMsg.style.opacity = 1;
     }
 })
+</script>
+<script>
+
+  const signupClick = document.getElementById("signup-form-click");
+  
+  signupClick.addEventListener("click", (e) => {
+      e.preventDefault();
+          location.reload();
+          window.location.href = "./public/signup.html";
+  })
 </script>
 
 </html>
